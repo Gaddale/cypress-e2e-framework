@@ -21,7 +21,7 @@ This test automates the complete flow on [SauceDemo](https://www.saucedemo.com):
 Cypress-E2E/
 ├── .github/
 │ └── workflows/
-│ └── build.yml # GitHub Actions Cypress workflow
+│ └── main.yml # GitHub Actions Cypress workflow
 │
 ├── cypress/
 │ ├── e2e/
@@ -50,7 +50,7 @@ Cypress-E2E/
 
 This project is built to trigger tests automatically on **every push to the `main` branch** using [GitHub Actions](https://docs.github.com/en/actions/concepts/overview).
 
-### 🔧 `.github/workflows/build.yml`
+### 🔧 `.github/workflows/main.yml`
 
 ```yaml
 name: End-to-End Tests
@@ -66,21 +66,26 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - run: npm ci
       - run: npx cypress run
+```
 
-✅ Workflow Summary
-Trigger: Any code push to main.
+---
 
-Runner: ubuntu-latest.
+## Steps:
 
-Steps:
-
-Checkout the repository.
-
-Install dependencies using npm ci.
-
-Run Cypress tests using npx cypress run.
-
+1.  **Clone or download** the repository.
+2.  Navigate to the project directory:
+    ```bash
+    cd cypress-e2e-framework
+    ```
+3.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+4.  **Run Tests in CLI** (generates reports):
+    ```bash
+    npx cypress run
+    ```
