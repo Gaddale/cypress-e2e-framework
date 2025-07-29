@@ -17,6 +17,7 @@ This test automates the complete flow on [SauceDemo](https://www.saucedemo.com):
 ---
 
 ## 🏗️ Project Structure (POM + GitHub Actions)
+```bash
 
 Cypress-E2E/
 ├── .github/
@@ -43,7 +44,7 @@ Cypress-E2E/
 ├── cypress.config.js # Cypress configuration
 ├── package.json # Node dependencies
 ├── package-lock.json
-
+```
 ---
 
 ## ⚙️ GitHub Actions CI Integration
